@@ -1,5 +1,4 @@
-console.log('About to start a server');
-
+import api from './api';
 import express, { NextFunction, Request, Response } from 'express';
 import serveIndex from 'serve-index';
 const app = express();
@@ -11,6 +10,8 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
 };
 
 app.use(logger);
+
+app.use('/api', api);
 
 app.use(express.static('.'));
 app.use(serveIndex('.', { icons: true }));
