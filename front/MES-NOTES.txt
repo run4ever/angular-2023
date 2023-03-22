@@ -15,7 +15,6 @@ npx ng g c routes/home --dry-run
 
 pas besoin d'export pour les composants de route
 
-
 raccourci lorem10 : texte bidon avec 10 mentions
 a.button => a href class button
 
@@ -42,6 +41,8 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 https://flexboxfroggy.com/#fr
 https://codingfantasy.com/games/flexboxadventure
 chercher "css flex game" et idem avec grid
+
+npx ng g i interfaces/article --dry-run
 
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
