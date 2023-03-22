@@ -15,6 +15,7 @@ pas besoin d'export pour les composants de route
 
 
 raccourci lorem10 : texte bidon avec 10 mentions
+a.button => a href class button
 
 //Lazy loading (télécharge ces parties qd l'utilisateur clique dessus)
 //pour créer un module avec son url et qui sera isolé dans un bundle et donc avec son routing independant
