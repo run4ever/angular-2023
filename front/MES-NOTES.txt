@@ -35,7 +35,13 @@ npx ng g c stock/add
 
 type="submit" : inutile car valeur par defaut
 
-:host {flex: 1;} equivaut à flex-grow, aligne le body en haut en le faisant grossir
+:host {flex: 1;
+  display: flex;
+  flex-flow: column;} equivaut à flex-grow, aligne le body en haut en le faisant grossir
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://flexboxfroggy.com/#fr
+https://codingfantasy.com/games/flexboxadventure
+chercher "css flex game" et idem avec grid
 
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
