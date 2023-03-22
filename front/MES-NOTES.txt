@@ -33,5 +33,9 @@ preloadingStrategy: PreloadAllModules
 npx ng g c stock/add
 //puis routing dans stock-routing module
 
+type="submit" : inutile car valeur par defaut
+
+:host {flex: 1;} equivaut à flex-grow, aligne le body en haut en le faisant grossir
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
