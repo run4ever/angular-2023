@@ -29,6 +29,9 @@ npx ng g m stock --route stock -m app
 //optimisation pour lui faire télécharger en tache de fond et non pas au clic:
 preloadingStrategy: PreloadAllModules
 
+//creation du composant add stock
+npx ng g c stock/add
+//puis routing dans stock-routing module
 
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
