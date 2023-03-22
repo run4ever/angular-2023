@@ -12,3 +12,6 @@ export = equivalent de public
 npx ng g c routes/home --dry-run
 
 pas besoin d'export pour les composants de route
+
+
+raccourci lorem10 : texte bidon avec 10 mentions
