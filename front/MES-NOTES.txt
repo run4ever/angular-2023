@@ -35,9 +35,9 @@ npx ng g c stock/add
 
 type="submit" : inutile car valeur par defaut
 
-:host {flex: 1;
+:host {flex: 1; //equivaut à flex-grow
   display: flex;
-  flex-flow: column;} equivaut à flex-grow, aligne le body en haut en le faisant grossir
+  flex-flow: column;} , aligne le body en haut en le faisant grossir
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 https://flexboxfroggy.com/#fr
 https://codingfantasy.com/games/flexboxadventure
