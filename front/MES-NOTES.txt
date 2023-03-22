@@ -1,0 +1,14 @@
+ne jamais installer angular ni npm en global
+pour que chaque projet ait sa propre version
+et éviter les conflits de version
+
+npx ng g m <mon-module> --dry-run
+npx ng g m layout -m app
+-m indique qu'on va l'ajouter comme import dans app
+
+npx ng g c <path>/<mon-comsant> --export --dry-run
+export = equivalent de public
+
+npx ng g c routes/home --dry-run
+
+pas besoin d'export pour les composants de route
