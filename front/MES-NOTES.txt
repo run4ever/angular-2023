@@ -16,10 +16,16 @@ pas besoin d'export pour les composants de route
 
 raccourci lorem10 : texte bidon avec 10 mentions
 
-//Lazy loading (télécharge ces parties en tache de fond au cas ou l'utilisateur clique dessus)
+//Lazy loading (télécharge ces parties qd l'utilisateur clique dessus)
 //pour créer un module avec son url et qui sera isolé dans un bundle et donc avec son routing independant
+//cf difference dans app-routing au niveau des Routes
+//pour tester, aller sur page d'accueil, couper le réseau dans F12 (Offline au lieu de No throttling) et cliquer sur le bouton stock, ca plante
 npx ng g m stock --route stock -m app --dry-run
 npx ng g m stock --route stock -m app
+
+//optimisation pour lui faire télécharger en tache de fond et non pas au clic:
+preloadingStrategy: PreloadAllModules
+
 
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
