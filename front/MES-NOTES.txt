@@ -89,5 +89,8 @@ les Validators ne sont pas bloquants, ils changent la classe ng-valid ou ng-inva
 
 https://www.typescriptlang.org/docs/handbook/utility-types.html
 
+
+raccourci console.log CTRL SHIFT L
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build

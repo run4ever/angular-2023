@@ -41,6 +41,9 @@ export class ArticleService {
     return of(undefined).pipe(
       delay(2000),
       tap(() => {
+        if (newArticle.name === 'Truc') {
+          throw new Error('Forbidden value');
+        }
         this.articles$.value.push({
           id: generateId(),
           ...newArticle,
