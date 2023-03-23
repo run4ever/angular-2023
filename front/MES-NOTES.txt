@@ -70,5 +70,17 @@ un obsverable publie des données à la fréquence choisie par le dev
 on va utiliser BehaviorSubject, qui est un type d'Observable chaud (hot observable) de la bibliothèque RxJS.
 n Observable chaud (hot observable) produit des données en continu, même si aucun abonné n'est présent
 
+//installation font awesome
+//https://github.com/FortAwesome/angular-fontawesome - cf. tableau des versions pour savoir laquelle prendre
+npx ng add @fortawesome/angular-fontawesome@0.12
+on prend les options gratuites
+par défaut il l'installe dans app.module, on l'ajoute aussi dans stock.module
+
+les croches indiquent qu'après le égal on a un objet javascript à évaluer et non une chaine de caractères
+par exemple
+[title]="supprimer" erreur car string, sauf si supprimer est une variable dans le ts
+et sinon [title]="'supprimer'" marcherait si supprimer pas une variable
+
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
