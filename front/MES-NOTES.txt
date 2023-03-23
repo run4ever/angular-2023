@@ -87,5 +87,7 @@ les Validators ne sont pas bloquants, ils changent la classe ng-valid ou ng-inva
 
 {{ f.value | json }} affiche le contenu de l'objet f.value en json
 
+https://www.typescriptlang.org/docs/handbook/utility-types.html
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build

@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { ActivatedRoute, Router } from '@angular/router';
+import { faPlus, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { of, switchMap, tap } from 'rxjs';
+import { NewArticle } from 'src/app/interfaces/article';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-add',
@@ -9,6 +13,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class AddComponent {
   faPlus = faPlus;
+  faCircleNotch = faCircleNotch;
+  isAdding = false;
 
   f = new FormGroup({
     name: new FormControl('Truc', [
@@ -19,7 +25,26 @@ export class AddComponent {
     qty: new FormControl(0, [Validators.required]),
   });
 
+  constructor(
+    private readonly articleService: ArticleService,
+    private readonly router: Router,
+    private readonly route: ActivatedRoute
+  ) {}
+
   submit() {
     console.log('submit');
+    const newArticle: NewArticle = this.f.value as unknown as NewArticle; //on résout salement un pb de cast
+    of(undefined)
+      .pipe(
+        tap(() => (this.isAdding = true)),
+        switchMap(() => {
+          return this.articleService.add(newArticle);
+        }),
+        switchMap(() => {
+          return this.router.navigate(['..'], { relativeTo: this.route });
+        }),
+        tap(() => (this.isAdding = false))
+      )
+      .subscribe();
   }
 }
