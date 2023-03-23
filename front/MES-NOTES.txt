@@ -4,6 +4,13 @@ ne jamais installer angular ni npm en global
 pour que chaque projet ait sa propre version
 et éviter les conflits de version
 
+//démarrer le projet
+npm start
+ou
+npx ng serve
+le npx car on a installé node en local (mieux)
+
+//créer un module
 npx ng g m <mon-module> --dry-run
 npx ng g m layout -m app
 -m indique qu'on va l'ajouter comme import dans app
@@ -43,6 +50,25 @@ https://codingfantasy.com/games/flexboxadventure
 chercher "css flex game" et idem avec grid
 
 npx ng g i interfaces/article --dry-run
+
+extension TypeScript Class Organizer : avec raccourci CTRL + SHIFT + O pour réorganiser le contenu d'une classe
+
+//Creation d'un store, non pas avec NgRx mais avec un service (@Injectable)
+npx ng g s services/article --dry-run
+
+modificateur de visibilité : private, public, protected
+avec ca, plus besoin de declarer ni affecter attribut
+
+//observable ($)
+fonction qui se declenche avec sa methode const souscription = monObservable.subscribe()
+qd il se termine, il emet un evenement complete ou error
+un composant peut interrompre un observable, et dans ce cas celui ci libère toutes les ressources qu'il avait réservées
+pour interrompre : souscription.unsubscribe()
+gros avantage par rapport aux promesses (promise) qui ne sont pas interrompables (on ne va pas en faire dans cette formation)
+un obsverable publie des données à la fréquence choisie par le dev
+2 types : Hot et Cold observables
+on va utiliser BehaviorSubject, qui est un type d'Observable chaud (hot observable) de la bibliothèque RxJS.
+n Observable chaud (hot observable) produit des données en continu, même si aucun abonné n'est présent
 
 //commande pour créer les fichiers js à donner à la prod
 npx ng build

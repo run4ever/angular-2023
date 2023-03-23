@@ -1,19 +1,20 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Article } from '../interfaces/article';
-
+import { ArticleService } from '../services/article.service';
 @Component({
   selector: 'app-stock',
   templateUrl: './stock.component.html',
   styleUrls: ['./stock.component.scss'],
 })
 export class StockComponent implements OnDestroy {
-  articles: Article[] = [
-    { id: 'a1', name: 'Tournevis', price: 3.99, qty: 12 },
-    { id: 'a2', name: 'Marteau', price: 9.99, qty: 15 },
-    { id: 'a3', name: 'Pelle', price: 19.99, qty: 2 },
-  ];
+  //articleService: ArticleService; plus besoin qd on ajoute le protected (accessible depuis classes et descendants)
+
+  //on ajoute un constructeur dans lequel on injecte le service (readonly equivaut à final en java)
+  constructor(protected readonly myArticleService: ArticleService) {
+    console.log('articleService : ', myArticleService);
+    //this.articleService = myArticleService;  plus besoin qd on ajoute le protected
+  }
 
   ngOnDestroy(): void {
-    console.log('bye bybe');
+    console.log('bye bye');
   }
 }

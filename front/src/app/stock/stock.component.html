@@ -15,7 +15,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of articles">
+        <!--
+          on boucle sur l'observable, le "| async" réveille le composant à chaque nouvelle publication
+          eviter le .value car ne resiste pas à l'optimisation des perfs
+          le subsribe est fait par le "| async"
+        -->
+        <tr *ngFor="let item of myArticleService.articles$ | async">
           <td class="name">{{ item.name }}</td>
           <td class="price">
             {{ item.price }}
