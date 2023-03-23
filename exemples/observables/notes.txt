@@ -1,0 +1,18 @@
+// créer un module node en créant le package.json (-y répond oui à toutes les questions)
+npm init -y
+//installer rxjs
+npm i rxjs
+
+.pipe() sert à transformer un observable
+
+exemple :
+timer(1000).pipe(fonction1, fonction2).subscribe(console.log)
+où timer : Creates an observable that will wait for a specified time period, or exact date, before emitting the number 0.
+https://rxmarbles.com/#timer
+
+
+ne pas écrire soi meme ses observables ou opérateurs car le danger est de mal gérer les unsubscribe (l'arret complet de l'observable au moment du unsubscribe)
+
+//sites utiles :
+rxmarbles.com
+rxjs.dev
