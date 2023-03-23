@@ -9,10 +9,21 @@
         <fa-icon [icon]="faPlus"></fa-icon>
       </a>
       <!-- [hidden]="selectedArticles.size === 0" plus performant que *ngIf="selectedArticles.size > 0"-->
-      <button title="Supprimer" [hidden]="selectedArticles.size === 0">
-        <fa-icon [icon]="faTrashAlt"></fa-icon>
+      <button
+        title="Supprimer"
+        [hidden]="selectedArticles.size === 0"
+        (click)="remove()"
+        [disabled]="isRemoving"
+      >
+        <fa-icon
+          [icon]="isRemoving ? faCircleNotch : faTrashAlt"
+          [spin]="isRemoving"
+        ></fa-icon>
       </button>
     </nav>
+    <div class="error">
+      {{ errorMsg }}
+    </div>
     <table>
       <thead>
         <tr>

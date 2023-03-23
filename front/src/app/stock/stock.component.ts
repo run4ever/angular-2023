@@ -3,7 +3,9 @@ import {
   faRotate,
   faPlus,
   faTrashAlt,
+  faCircleNotch,
 } from '@fortawesome/free-solid-svg-icons';
+import { catchError, finalize, of, switchMap, tap } from 'rxjs';
 import { Article } from '../interfaces/article';
 import { ArticleService } from '../services/article.service';
 @Component({
@@ -15,8 +17,11 @@ export class StockComponent implements OnDestroy {
   faRotate = faRotate;
   faPlus = faPlus;
   faTrashAlt = faTrashAlt;
+  faCircleNotch = faCircleNotch;
   //articleService: ArticleService; plus besoin qd on ajoute le protected (accessible depuis classes et descendants)
   selectedArticles = new Set<Article>();
+  isRemoving = false;
+  errorMsg = '';
 
   //on ajoute un constructeur dans lequel on injecte le service (readonly equivaut à final en java)
   constructor(protected readonly myArticleService: ArticleService) {
@@ -30,6 +35,34 @@ export class StockComponent implements OnDestroy {
       return;
     }
     this.selectedArticles.add(a);
+  }
+
+  remove() {
+    console.log('remove');
+    const ids = [...this.selectedArticles].map((a) => a.id); //transforme un ensemble en tableau et on ne prend que l'id
+
+    of(undefined)
+      .pipe(
+        tap(() => {
+          this.errorMsg = '';
+          this.isRemoving = true;
+        }),
+        switchMap(() => {
+          return this.myArticleService.remove(ids);
+        }),
+        tap(() => {
+          this.selectedArticles.clear();
+        }),
+        finalize(() => {
+          this.isRemoving = false;
+        }),
+        catchError((err) => {
+          console.log('err: ', err);
+          this.errorMsg = err.message;
+          return of(undefined);
+        })
+      )
+      .subscribe();
   }
 
   ngOnDestroy(): void {

@@ -15,6 +15,9 @@ import { Article, NewArticle } from '../interfaces/article';
   providedIn: 'root',
 })
 export class ArticleService {
+  clear() {
+    throw new Error('Method not implemented.');
+  }
   //on definit l'observable (syntaxe $)
   private articles$ = new BehaviorSubject<Article[]>([
     { id: 'a1', name: 'Tournevis', price: 3.99, qty: 12 },
@@ -55,5 +58,19 @@ export class ArticleService {
 
   getArticles(): Observable<Article[]> {
     return this.articles$.pipe(distinctUntilChanged());
+  }
+
+  remove(ids: string[]): Observable<void> {
+    return of(undefined).pipe(
+      delay(2000),
+      tap(() => {
+        if (ids.length > 1) {
+          throw new Error('interdit de supprimer plusieurs aticles');
+        }
+        this.articles$.next(
+          this.articles$.value.filter((a) => !ids.includes(a.id))
+        );
+      })
+    );
   }
 }
