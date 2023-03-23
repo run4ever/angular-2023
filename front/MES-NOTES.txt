@@ -81,6 +81,10 @@ par exemple
 [title]="supprimer" erreur car string, sauf si supprimer est une variable dans le ts
 et sinon [title]="'supprimer'" marcherait si supprimer pas une variable
 
+//Traitement du formulaire
+Utiliser ReactiveFormsModule et pas FormsModule, bcp moins bien (ancienne version)
+
+{{ f.value | json }} affiche le contenu de l'objet f.value en json
 
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
