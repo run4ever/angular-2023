@@ -8,8 +8,9 @@
       <a routerLink="add" class="button" title="Ajouter">
         <fa-icon [icon]="faPlus"></fa-icon>
       </a>
-      <button>
-        <fa-icon [icon]="faTrashAlt" title="Supprimer"></fa-icon>
+      <!-- [hidden]="selectedArticles.size === 0" plus performant que *ngIf="selectedArticles.size > 0"-->
+      <button title="Supprimer" [hidden]="selectedArticles.size === 0">
+        <fa-icon [icon]="faTrashAlt"></fa-icon>
       </button>
     </nav>
     <table>
@@ -26,7 +27,11 @@
           eviter le .value car ne resiste pas à l'optimisation des perfs
           le subsribe est fait par le "| async"
         -->
-        <tr *ngFor="let item of myArticleService.getArticles() | async">
+        <tr
+          *ngFor="let item of myArticleService.getArticles() | async"
+          [class.selected]="selectedArticles.has(item)"
+          (click)="select(item)"
+        >
           <td class="name">{{ item.name }}</td>
           <td class="price">
             {{ item.price }}

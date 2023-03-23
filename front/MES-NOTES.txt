@@ -92,5 +92,12 @@ https://www.typescriptlang.org/docs/handbook/utility-types.html
 
 raccourci console.log CTRL SHIFT L
 
+ne jamais imbriquer des pipe ni des subscribe
+
+[hidden]="selectedArticles.size === 0"
+plus performant que
+*ngIf="selectedArticles.size > 0"
+car le bouton ne disparait pas du DOM, c'est juste une classe qui change
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
