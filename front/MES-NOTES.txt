@@ -83,6 +83,7 @@ et sinon [title]="'supprimer'" marcherait si supprimer pas une variable
 
 //Traitement du formulaire
 Utiliser ReactiveFormsModule et pas FormsModule, bcp moins bien (ancienne version)
+les Validators ne sont pas bloquants, ils changent la classe ng-valid ou ng-invalid sur l'element
 
 {{ f.value | json }} affiche le contenu de l'objet f.value en json
 
