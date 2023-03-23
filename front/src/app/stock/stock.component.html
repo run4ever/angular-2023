@@ -20,7 +20,7 @@
           eviter le .value car ne resiste pas à l'optimisation des perfs
           le subsribe est fait par le "| async"
         -->
-        <tr *ngFor="let item of myArticleService.articles$ | async">
+        <tr *ngFor="let item of myArticleService.getArticles() | async">
           <td class="name">{{ item.name }}</td>
           <td class="price">
             {{ item.price }}
