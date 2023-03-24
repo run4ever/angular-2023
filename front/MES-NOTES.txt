@@ -2,6 +2,18 @@ https://github.com/jlg-formation/agu-mars-2023
 https://www.jlg-consulting.com/fr/home
 https://www.jlg-consulting.com/orsys/AGU/
 
+sites utiles
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://flexboxfroggy.com/#fr
+https://codingfantasy.com/games/flexboxadventure
+chercher "css flex game" et idem avec grid
+https://rxmarbles.com/#timer
+https://thinkrx.io/
+
+
+SHIFT ALT O : supprime les imports inutilisés (natif vscode)
+CTRL SHIFT O : réordonnance les attributs et classes (plugin)
+
 ne jamais installer angular ni npm en global
 pour que chaque projet ait sa propre version
 et éviter les conflits de version
@@ -46,10 +58,6 @@ type="submit" : inutile car valeur par defaut
 :host {flex: 1; //equivaut à flex-grow
   display: flex;
   flex-flow: column;} , aligne le body en haut en le faisant grossir
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-https://flexboxfroggy.com/#fr
-https://codingfantasy.com/games/flexboxadventure
-chercher "css flex game" et idem avec grid
 
 npx ng g i interfaces/article --dry-run
 

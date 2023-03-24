@@ -3,7 +3,6 @@ import {
   BehaviorSubject,
   delay,
   distinctUntilChanged,
-  generate,
   Observable,
   of,
   tap,
@@ -59,5 +58,9 @@ export class ArticleService {
         );
       })
     );
+  }
+
+  refresh(): Observable<void> {
+    return of(undefined).pipe(delay(2000));
   }
 }

@@ -21,6 +21,7 @@ export class StockComponent implements OnDestroy {
   //articleService: ArticleService; plus besoin qd on ajoute le protected (accessible depuis classes et descendants)
   selectedArticles = new Set<Article>();
   isRemoving = false;
+  isRefreshing = false;
   errorMsg = '';
 
   //on ajoute un constructeur dans lequel on injecte le service (readonly equivaut à final en java)
@@ -35,6 +36,29 @@ export class StockComponent implements OnDestroy {
       return;
     }
     this.selectedArticles.add(a);
+  }
+
+  refresh() {
+    console.log('refresh');
+    of(undefined)
+      .pipe(
+        tap(() => {
+          this.errorMsg = '';
+          this.isRefreshing = true;
+        }),
+        switchMap(() => {
+          return this.myArticleService.refresh();
+        }),
+        finalize(() => {
+          this.isRefreshing = false;
+        }),
+        catchError((err) => {
+          console.log('err: ', err);
+          this.errorMsg = err.message;
+          return of(undefined);
+        })
+      )
+      .subscribe();
   }
 
   remove() {
