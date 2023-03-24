@@ -14,6 +14,9 @@ import { Article, NewArticle } from '../interfaces/article';
   providedIn: 'root',
 })
 export class ArticleService {
+  isLoading = false;
+  errorMsg = '';
+
   clear() {
     throw new Error('Method not implemented.');
   }

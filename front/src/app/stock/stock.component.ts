@@ -89,6 +89,13 @@ export class StockComponent implements OnDestroy {
       .subscribe();
   }
 
+  getErrorMsg(): string {
+    if (this.errorMsg !== '') {
+      return this.errorMsg;
+    }
+    return this.myArticleService.errorMsg;
+  }
+
   ngOnDestroy(): void {
     console.log('bye bye');
   }
