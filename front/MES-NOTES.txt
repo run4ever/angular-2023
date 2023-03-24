@@ -1,5 +1,6 @@
 https://github.com/jlg-formation/agu-mars-2023
 https://www.jlg-consulting.com/fr/home
+https://www.jlg-consulting.com/orsys/AGU/
 
 ne jamais installer angular ni npm en global
 pour que chaque projet ait sa propre version

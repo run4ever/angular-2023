@@ -25,19 +25,6 @@ export class ArticleService {
     { id: 'a3', name: 'Pelle', price: 19.99, qty: 2 },
   ]);
 
-  constructor() {
-    //on ajoute un element au bout de 2 secondes
-    setTimeout(() => {
-      this.articles$.value.push({
-        id: 'a4',
-        name: 'Truc',
-        price: 0.99,
-        qty: 22,
-      });
-      this.articles$.next(this.articles$.value); //repulication des données pour tous ceux qui ecoutent
-    }, 2000);
-  }
-
   add(newArticle: NewArticle): Observable<void> {
     //of : publie un truc vide puis se ferme
     //tap : dès que tu recois un truc, execute la fonction suivante
