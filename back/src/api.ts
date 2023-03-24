@@ -6,9 +6,14 @@ const generateId = () => {
 };
 
 let articles: Article[] = [
-  { id: 'a1', name: 'Tournevis-back', price: 3.99, qty: 12 },
-  { id: 'a2', name: 'Marteau-back', price: 9.99, qty: 15 },
-  { id: 'a3', name: 'Pelle-back', price: 19.99, qty: 2 },
+  { id: 'a1', name: 'Tournevis rouge', price: 3.99, qty: 12 },
+  { id: 'a2', name: 'Gros Marteau', price: 9.99, qty: 15 },
+  {
+    id: 'a3',
+    name: 'Pelle avec manche en bois',
+    price: 19.99,
+    qty: 2,
+  },
 ];
 
 const app = express.Router();

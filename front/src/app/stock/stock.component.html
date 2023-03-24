@@ -55,7 +55,7 @@
             [class.selected]="selectedArticles.has(item)"
             (click)="select(item)"
           >
-            <td class="name">{{ item.name }}</td>
+            <td class="name">{{ item.name | troncate }}</td>
             <td class="price">
               {{ item.price | currency }}
             </td>
