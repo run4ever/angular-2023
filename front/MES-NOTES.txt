@@ -121,5 +121,10 @@ npx ng g d widgets/autofocus --export --dry-run
 //creation d'un pipe
 npx ng g p widgets/troncate --export --dry-run
 
+//pour linter
+npx ng lint
+npx ng add @angular-eslint/schematcis
+npm run lint
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
