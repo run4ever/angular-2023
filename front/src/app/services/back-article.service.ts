@@ -23,7 +23,7 @@ export class BackArticleService extends ArticleService {
     return this.http.get<Article[]>(url).pipe(
       map((articles) => {
         this.articles$.next(articles);
-        return;
+        //return; inutile
       })
     );
   }
