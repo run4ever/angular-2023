@@ -126,5 +126,13 @@ npx ng lint
 npx ng add @angular-eslint/schematcis
 npm run lint
 
+//test unitaires
+npx ng test
+npx ng generate config karma
+
+//test bout en bout
+npx ng e2e
+cypress
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build

@@ -5,7 +5,7 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
 })
 export class AutofocusDirective implements OnInit {
   constructor(private readonly elt: ElementRef<HTMLInputElement>) {
-    console.log('appAutofocus instanciated :-)');
+    //console.log('appAutofocus instanciated :-)');
     //this.elt.nativeElement.focus(); ne pas mettre ici car  la patie visuelle n'est pas complètement finie (pas encore rattachée au DOM)
   }
 
