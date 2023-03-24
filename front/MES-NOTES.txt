@@ -115,5 +115,8 @@ npx ng g s services/back-article --dry-run
 
 //on demarre le back avec npm start aussi, depuis le répertoire back
 
+//creation d'une directive
+npx ng g d widgets/autofocus --export --dry-run
+
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
