@@ -11,6 +11,14 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
 
 app.use(logger);
 
+//régler le pb du CORS (autoriser le serveur front à appeler le serveur back)
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  //res.setHeader('', '');
+  //res.setHeader('', '');
+  next();
+});
+
 app.use('/api', api);
 
 app.use(express.static('.'));

@@ -113,6 +113,7 @@ car le bouton ne disparait pas du DOM, c'est juste une classe qui change
 //creation du service back
 npx ng g s services/back-article --dry-run
 
+//on demarre le back avec npm start aussi, depuis le répertoire back
 
 //commande pour créer les fichiers js à donner à la prod
 npx ng build
