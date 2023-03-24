@@ -15,7 +15,7 @@ app.use(logger);
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
   res.setHeader('Access-Control-Allow-Headers', '*');
-  //res.setHeader('', '');
+  res.setHeader('Access-Control-Allow-Methods', '*');
   next();
 });
 

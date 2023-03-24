@@ -5,7 +5,7 @@ const generateId = () => {
   return Date.now() + '_' + Math.round(Math.random() * 1e12);
 };
 
-const articles: Article[] = [
+let articles: Article[] = [
   { id: 'a1', name: 'Tournevis-back', price: 3.99, qty: 12 },
   { id: 'a2', name: 'Marteau-back', price: 9.99, qty: 15 },
   { id: 'a3', name: 'Pelle-back', price: 19.99, qty: 2 },
@@ -36,6 +36,12 @@ app.post('/articles', (req, res) => {
   const article = { ...newArticle, id: generateId() };
   articles.push(article);
   res.status(201).end();
+});
+
+app.delete('/articles', (req, res) => {
+  const ids: string[] = req.body;
+  articles = articles.filter((a) => !ids.includes(a.id));
+  res.status(204).end();
 });
 
 export default app;
