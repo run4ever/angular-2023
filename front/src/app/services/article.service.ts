@@ -18,7 +18,7 @@ export class ArticleService {
     throw new Error('Method not implemented.');
   }
   //on definit l'observable (syntaxe $)
-  private articles$ = new BehaviorSubject<Article[]>([
+  protected articles$ = new BehaviorSubject<Article[]>([
     { id: 'a1', name: 'Tournevis', price: 3.99, qty: 12 },
     { id: 'a2', name: 'Marteau', price: 9.99, qty: 15 },
     { id: 'a3', name: 'Pelle', price: 19.99, qty: 2 },

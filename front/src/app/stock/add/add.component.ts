@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faPlus, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faCircleNotch, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { catchError, finalize, of, switchMap, tap } from 'rxjs';
 import { NewArticle } from 'src/app/interfaces/article';
 import { ArticleService } from 'src/app/services/article.service';
